@@ -5,7 +5,7 @@ terraform {
       version = "5.6.2"
     }
     google = {
-      source = "hashicorp/google"
+      source  = "hashicorp/google"
       version = "4.72.0"
     }
   }
@@ -24,6 +24,6 @@ provider "aws" {
   profile                  = "default"
 }
 
-#provider "google" {
-#  # Configuration options
-#}
+provider "google" {
+  # Configuration options
+}
