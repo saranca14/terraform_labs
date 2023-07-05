@@ -11,7 +11,7 @@ terraform {
   }
   backend "s3" {
     bucket = "ca14-terraform-backend"
-    key    = "terraform_labs/"
+    key    = "terraform_labs/gcp/"
     region = "eu-west-2"
   }
 }
