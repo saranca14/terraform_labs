@@ -15,6 +15,15 @@ resource "google_compute_instance" "instance-1" {
     mode = "READ_WRITE"
   }
 
+  metadata_startup_script = <<-EOT
+  #!/bin/bash
+  echo "script for install apache2"
+  apt-get update
+  apt-get install -y apache2
+  systemctl enable apache2
+  systemctl start apache2
+  EOT
+
   can_ip_forward      = false
   deletion_protection = false
   enable_display      = false
@@ -42,7 +51,7 @@ resource "google_compute_instance" "instance-1" {
   }
 
   service_account {
-    email  = "PLACE_HOLDER"
+    email  = "terraform-user@ultra-sunset-390511.iam.gserviceaccount.com"
     scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/logging.write",
       "https://www.googleapis.com/auth/monitoring.write", "https://www.googleapis.com/auth/service.management.readonly",

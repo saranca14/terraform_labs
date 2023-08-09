@@ -11,7 +11,7 @@ terraform {
   }
   backend "s3" {
     bucket = "ca14-terraform-backend"
-    key    = "terraform_labs/gcp/"
+    key    = "terraform_labs/gcp_terraform.tfstate"
     region = "eu-west-2"
   }
 }
@@ -26,6 +26,6 @@ provider "aws" {
 
 provider "google" {
   credentials = file("/Users/snrj/Documents/GitHub/auth/ultra-sunset-390511-ecc9291df90e.json")
-  project = "ultra-sunset-390511"
-  region = "us-central1"
+  project     = "ultra-sunset-390511"
+  region      = "us-central1"
 }
