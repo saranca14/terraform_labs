@@ -25,5 +25,7 @@ provider "aws" {
 }
 
 provider "google" {
-  # Configuration options
+  credentials = file("/Users/snrj/Documents/GitHub/auth/ultra-sunset-390511-ecc9291df90e.json")
+  project = "ultra-sunset-390511"
+  region = "us-central1"
 }
